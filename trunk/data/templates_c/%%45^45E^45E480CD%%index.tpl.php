@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.20, created on 2011-04-29 04:38:14
+<?php /* Smarty version 2.6.20, created on 2011-04-29 05:23:58
          compiled from index.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'nl2br', 'index.tpl', 40, false),array('function', 'textpad', 'index.tpl', 41, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'nl2br', 'index.tpl', 41, false),array('function', 'textpad', 'index.tpl', 42, false),)), $this); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -20,7 +20,8 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'nl2br', 'in
   </tr>
   <tr>
     <td colspan="2" align="right">Việt dịch: Hòa Thượng Thích Minh Châu<br />
-      Họa sĩ: Mr. P. Wickramanayaka (vẽ theo bản tiếng Anh mà HT Thích Minh Châu dịch)<br />&nbsp;
+      Họa sĩ: Mr. P. Wickramanayaka (vẽ theo bản tiếng Anh mà HT Thích Minh Châu dịch)<br />
+      Website này dẫn ngưồn từ <a href="http://www.adidaphat.com">www.adidaphat.com</a><br />&nbsp;
     </td>
   </tr>
   <tr>
