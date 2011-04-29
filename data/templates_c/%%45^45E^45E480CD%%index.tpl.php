@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.20, created on 2011-04-29 03:57:22
+<?php /* Smarty version 2.6.20, created on 2011-04-29 04:38:14
          compiled from index.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'nl2br', 'index.tpl', 33, false),array('function', 'textpad', 'index.tpl', 34, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'nl2br', 'index.tpl', 40, false),array('function', 'textpad', 'index.tpl', 41, false),)), $this); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -15,12 +15,16 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'nl2br', 'in
   <tr>
     <td colspan="2" align="center" style="padding:24px;">
       <span style="font-size: 24pt"><b>KINH PHÁP CÚ</b></span><br />
-      Việt dịch: Hòa Thượng Thích Minh Châu<br />
-      Họa sĩ: Mr. P. Wickramanayaka (vẽ theo bản tiếng Anh mà HT Thích Minh Châu dịch)
+      <i>"Treasury of Truth" (Kho-Báu của Sự-Thật)</i><br />
     </td>
   </tr>
   <tr>
-    <td width="250" valign="top" style="background-color: rgb(181,228,254)">
+    <td colspan="2" align="right">Việt dịch: Hòa Thượng Thích Minh Châu<br />
+      Họa sĩ: Mr. P. Wickramanayaka (vẽ theo bản tiếng Anh mà HT Thích Minh Châu dịch)<br />&nbsp;
+    </td>
+  </tr>
+  <tr>
+    <td width="250" valign="top" style="background-color: rgb(181,228,254);border-top: 1px solid #cccccc;border-left: 1px solid #cccccc;border-bottom: 1px solid #cccccc">
       <table cellpadding="0" cellspacing="0" border="0" width="100%">
         <?php $_from = $this->_tpl_vars['Pham']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['pham']):
@@ -34,9 +38,14 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'nl2br', 'in
         <?php endforeach; endif; unset($_from); ?>
       </table>
     </td>
-    <td>
+    <td style="padding-left: 5px;border: 1px solid #cccccc">
       <?php if ($this->_tpl_vars['Cau'] != null): ?>
       <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td colspan="2" align="center" style="padding-top: 10px;"><span style="color: red;font-weight: bold;font-size:18pt;"><?php echo $this->_tpl_vars['Cau'][0]['pham']; ?>
+. <?php echo $this->_tpl_vars['Cau'][0]['ten_pham']; ?>
+</span><br />&nbsp;</td>
+        </tr>
         <?php $_from = $this->_tpl_vars['Cau']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['cau']):
 ?>
@@ -63,6 +72,28 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'nl2br', 'in
           </td>
         </tr>
         <?php endif; ?>
+        <tr>
+          <td align="left" style="padding-top: 20px"><?php if ($this->_tpl_vars['phamtieptruoc'] != ''): ?><a href="index.php?id=<?php echo $this->_tpl_vars['phamtieptruoc']; ?>
+"><span style="color: blue;font-size: 16pt;font-weight: bold">Phẩm <?php echo $this->_tpl_vars['phamtieptruoc']; ?>
+</span></a><?php else: ?>&nbsp;<?php endif; ?></td>
+          <td align="right"><?php if ($this->_tpl_vars['phamtiepsau'] != ''): ?><a href="index.php?id=<?php echo $this->_tpl_vars['phamtiepsau']; ?>
+"><span style="color: blue;font-size: 16pt;font-weight: bold">Phẩm <?php echo $this->_tpl_vars['phamtiepsau']; ?>
+</span></a><?php else: ?>&nbsp;<?php endif; ?></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="right" style="padding: 20px 0px"><table style="border-right: 1px solid #cccccc;border-bottom: 1px solid #cccccc" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <?php $_from = $this->_tpl_vars['Pham']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['pham']):
+?>
+              <td align="center" style="border-left: 1px solid #cccccc;border-top: 1px solid #cccccc;padding:2px 0px;width:20px;font-size:8pt;font-family:arial;background-color:rgb(181,228,254)"><a style="text-decoration: none" href="index.php?id=<?php echo $this->_tpl_vars['pham']['id']; ?>
+" title="<?php echo $this->_tpl_vars['pham']['ten_pham']; ?>
+"><b><?php echo $this->_tpl_vars['pham']['id']; ?>
+</b></a></td>
+              <?php endforeach; endif; unset($_from); ?>
+            </tr>
+          </table></td>
+        </tr>
       </table>
       <?php else: ?>
       &nbsp;
