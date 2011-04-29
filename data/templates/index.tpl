@@ -16,7 +16,8 @@
   </tr>
   <tr>
     <td colspan="2" align="right">Việt dịch: Hòa Thượng Thích Minh Châu<br />
-      Họa sĩ: Mr. P. Wickramanayaka (vẽ theo bản tiếng Anh mà HT Thích Minh Châu dịch)<br />&nbsp;
+      Họa sĩ: Mr. P. Wickramanayaka (vẽ theo bản tiếng Anh mà HT Thích Minh Châu dịch)<br />
+      Website này dẫn ngưồn từ <a href="http://www.adidaphat.com">www.adidaphat.com</a><br />&nbsp;
     </td>
   </tr>
   <tr>
