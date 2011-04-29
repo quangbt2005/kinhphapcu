@@ -33,4 +33,9 @@ function LoadCauInPham($pham_id){
   $query = "SELECT c.*,p.ten_pham FROM content c INNER JOIN pham p ON(c.pham=p.id) WHERE p.id=" . $pham_id;
   return MySQLSelect($query);
 }
+
+function LoadGhiChuInPham($pham_id){
+  $query = "SELECT g.*,p.ten_pham FROM ghichu g INNER JOIN pham p ON(g.pham=p.id) WHERE p.id=" . $pham_id;
+  return MySQLSelect($query);
+}
 ?>
