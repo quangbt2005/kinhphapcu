@@ -24,18 +24,59 @@ function MySQLSelect($query, $result_type=MYSQL_ASSOC){
   return $result;
 }
 
+function P_SQL_Quote_Escape_String( $SQL, $Reg_Array, $Cnv_Array )
+{
+ $Pattern = "/[\\x00-\\x08]|[\\x0B-\\x0C]|[\\x0E-\\x1F]/";
+ $SQL     = preg_replace( $Pattern, "", $SQL );
+
+ $XX = 0;
+
+ $Count = count( $Reg_Array );
+
+ while( $XX < $Count )
+ {
+  $SQL = mb_ereg_replace( $Reg_Array[$XX], $Cnv_Array[$XX], $SQL );
+  ++$XX;
+ }
+
+ return $SQL;
+}
+
+function MySQLQuote($SQL, $DBMS=''){
+	$Reg_Array = array( "\\\\", "'",   "\"" );
+  $Cnv_Array = array( "\\\\", "\\'", "\\\"" );
+
+  if( mb_strtoupper( $DBMS ) == "ORACLE" )
+  {
+    $Reg_Array = array( "'" );
+    $Cnv_Array = array( "''" );
+  }
+
+  return P_SQL_Quote_Escape_String( $SQL, $Reg_Array, $Cnv_Array );
+}
+
 function LoadCategoriesOfPham(){
   $query = "SELECT * FROM pham";
   return MySQLSelect($query);
 }
 
 function LoadCauInPham($pham_id){
-  $query = "SELECT c.*,p.ten_pham FROM content c INNER JOIN pham p ON(c.pham=p.id) WHERE p.id=" . $pham_id;
+  $query = "SELECT c.*,p.ten_pham FROM content c INNER JOIN pham p ON(c.pham=p.id) WHERE p.id=" . MySQLQuote($pham_id);
   return MySQLSelect($query);
 }
 
 function LoadGhiChuInPham($pham_id){
-  $query = "SELECT g.*,p.ten_pham FROM ghichu g INNER JOIN pham p ON(g.pham=p.id) WHERE p.id=" . $pham_id;
+  $query = "SELECT g.*,p.ten_pham FROM ghichu g INNER JOIN pham p ON(g.pham=p.id) WHERE p.id=" . MySQLQuote($pham_id);
+  return MySQLSelect($query);
+}
+
+function LoadGhiChuInCau($cau_id){
+  $query = "SELECT g.* FROM ghichu g WHERE cau=" . MySQLQuote($cau_id);
+  return MySQLSelect($query);
+}
+
+function LoadCauByID($cau_id){
+  $query = "SELECT c.*,p.ten_pham FROM content c LEFT JOIN pham p ON(c.pham=p.id) WHERE c.id=" . MySQLQuote($cau_id);
   return MySQLSelect($query);
 }
 ?>

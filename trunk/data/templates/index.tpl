@@ -17,7 +17,7 @@
   <tr>
     <td colspan="2" align="right">Việt dịch: Hòa Thượng Thích Minh Châu<br />
       Họa sĩ: Mr. P. Wickramanayaka (vẽ theo bản tiếng Anh mà HT Thích Minh Châu dịch)<br />
-      Website này dẫn ngưồn từ <a href="http://www.adidaphat.com">www.adidaphat.com</a><br />&nbsp;
+      Website này dẫn ngưồn từ <a href="http://www.adidaphat.info">www.adidaphat.info</a><br />&nbsp;
     </td>
   </tr>
   <tr>
@@ -30,7 +30,7 @@
         {/foreach}
       </table>
     </td>
-    <td style="padding-left: 5px;border: 1px solid #cccccc">
+    <td style="padding-left: 5px;border: 1px solid #cccccc" valign="top">
       {if $Cau != null}
       <table cellpadding="0" cellspacing="0" border="0">
         <tr>
