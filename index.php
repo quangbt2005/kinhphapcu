@@ -4,7 +4,7 @@ $Pham = '';
 $Cau = '';
 $GhiChu = '';
 
-$pham_id = $_GET['id'];
+@$pham_id = $_GET['id'];
 
 if(empty($pham_id)) $pham_id = 1;
 $phamtieptruoc = $pham_id - 1;
