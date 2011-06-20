@@ -17,7 +17,7 @@
   <tr>
     <td colspan="2" align="right">Việt dịch: Hòa Thượng Thích Minh Châu<br />
       Họa sĩ: Mr. P. Wickramanayaka (vẽ theo bản tiếng Anh mà HT Thích Minh Châu dịch)<br />
-      Website này dẫn nguồn từ <a href="http://tuvahanh.com/KinhPHAP-CUvoiHinhVe.html" target="_blank">www.adidaphat.info</a><br />&nbsp;
+      Website này dẫn ngưồn từ <a href="http://www.adidaphat.info">www.adidaphat.info</a><br />&nbsp;
     </td>
   </tr>
   <tr>
@@ -54,10 +54,6 @@
           </td>
         </tr>
         {/if}
-        <tr>
-          <td align="left" style="padding-top: 20px">{if $phamtieptruoc != ''}<a href="index.php?id={$phamtieptruoc}"><span style="color: blue;font-size: 16pt;font-weight: bold">Phẩm {$phamtieptruoc}</span></a>{else}&nbsp;{/if}</td>
-          <td align="right">{if $phamtiepsau != ''}<a href="index.php?id={$phamtiepsau}"><span style="color: blue;font-size: 16pt;font-weight: bold">Phẩm {$phamtiepsau}</span></a>{else}&nbsp;{/if}</td>
-        </tr>
         <tr>
           <td colspan="2" align="right" style="padding: 20px 0px"><table style="border-right: 1px solid #cccccc;border-bottom: 1px solid #cccccc" border="0" cellpadding="0" cellspacing="0">
             <tr>
