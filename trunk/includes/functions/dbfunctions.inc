@@ -43,7 +43,7 @@ function P_SQL_Quote_Escape_String( $SQL, $Reg_Array, $Cnv_Array )
 }
 
 function MySQLQuote($SQL, $DBMS=''){
-	$Reg_Array = array( "\\\\", "'",   "\"" );
+  $Reg_Array = array( "\\\\", "'",   "\"" );
   $Cnv_Array = array( "\\\\", "\\'", "\\\"" );
 
   if( mb_strtoupper( $DBMS ) == "ORACLE" )
@@ -78,5 +78,12 @@ function LoadGhiChuInCau($cau_id){
 function LoadCauByID($cau_id){
   $query = "SELECT c.*,p.ten_pham FROM content c LEFT JOIN pham p ON(c.pham=p.id) WHERE c.id=" . MySQLQuote($cau_id);
   return MySQLSelect($query);
+}
+function Positive_Int_Check( $value )
+{
+  if( isset( $value ) == FALSE ) return FALSE;
+  if( is_numeric( $value ) == FALSE ) return FALSE;
+  if( is_int( $value + 0 ) == FALSE ) return FALSE;
+  return $value >= 0;
 }
 ?>
