@@ -3,6 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="robots" content="noindex" />
+  <meta name="description" content="{foreach from=$Cau item=cau}{$cau.text|replace:'"':''}{/foreach}" />
   <title>Kinh Phap Cu</title>
 </head>
 <body>
@@ -33,27 +34,33 @@
     <td style="padding-left: 5px;border: 1px solid #cccccc" valign="top">
       {if $Cau != null}
       <table cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td colspan="2" align="center" style="padding-top: 10px;"><span style="color: red;font-weight: bold;font-size:18pt;">{$Cau[0].pham}. {$Cau[0].ten_pham}</span><br />&nbsp;</td>
-        </tr>
         {foreach from=$Cau item=cau}
+        {if $smarty.request.title != '0'}
+        <tr>
+          <td colspan="2" align="center" style="padding-top: 10px;"><span style="color: red;font-weight: bold;font-size:18pt;">{$cau.pham}. {$cau.ten_pham}</span><br />&nbsp;</td>
+        </tr>
+        {else}
+        <tr>
+          <td colspan="2" align="center" style="padding-top: 10px;">&nbsp;</td>
+        </tr>
+        {/if}
         <tr>
           <td nowrap valign="top" style="padding-left: 30px;padding-bottom: 10px;color: blue;font-weight: bold;font-size: 15pt" width="290">{nl2br value=$cau.text}</td>
           <td style="padding-bottom: 40px;"><img src="images/DS{textpad text=$cau.image length=3}.jpg" width="320" height="320"></td>
         </tr>
-        {/foreach}
-        {if $GhiChu != ''}
+        {if $GhiChu[$cau.id] != null}
         <tr>
-          <td colspan="2"><b>Ghi Chú</b></td>
+          <td colspan="2" style="padding-left: 40px;"><b>Ghi Chú</b></td>
         </tr>
         <tr>
-          <td>
-            {foreach from=$GhiChu item=ghichu}
+          <td style="padding-left: 40px;">
+            {foreach from=$GhiChu[$cau.id] item=ghichu}
             [{$ghichu.thutu}]: {$ghichu.noidung}<br />
             {/foreach}
           </td>
         </tr>
         {/if}
+        {/foreach}
         <tr>
           <td colspan="2" align="right" style="padding: 20px 0px"><table style="border-right: 1px solid #cccccc;border-bottom: 1px solid #cccccc" border="0" cellpadding="0" cellspacing="0">
             <tr>
