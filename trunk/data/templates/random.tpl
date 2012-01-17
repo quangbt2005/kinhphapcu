@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="robots" content="noindex" />
-  <meta name="description" content="{foreach from=$Cau item=cau}{$cau.text|replace:'"':''}{/foreach}" />
+  <meta name="description" content="{$Cau[0].text|replace:'"':''|replace:' ;':', '}" />
   <title>Kinh Phap Cu</title>
 </head>
 <body>
