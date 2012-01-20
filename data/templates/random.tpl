@@ -34,8 +34,8 @@
     <td style="padding-left: 5px;border: 1px solid #cccccc" valign="top">
       {if $Cau != null}
       <table cellpadding="0" cellspacing="0" border="0">
-        {foreach from=$Cau item=cau}
-        {if $smarty.request.title != '0'}
+        {foreach from=$Cau item=cau key=key}
+        {if ($smarty.request.title != '0' && $cau.pham != '')}
         <tr>
           <td colspan="2" align="center" style="padding-top: 10px;"><span style="color: red;font-weight: bold;font-size:18pt;">{$cau.pham}. {$cau.ten_pham}</span><br />&nbsp;</td>
         </tr>

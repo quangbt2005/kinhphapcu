@@ -19,6 +19,12 @@ foreach($id as $i){
   $GhiChu[$i] = $ghichu;
 }
 
+for($i=1;$i<count($Cau); $i++){
+  if($Cau[$i]['pham'] == $Cau[$i-1]['pham']){
+    $Cau[$i]['pham'] = '';
+  }
+}
+
 $Pham = LoadCategoriesOfPham();
 
 $smarty->assign('Cau', $Cau);
